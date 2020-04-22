@@ -11,6 +11,10 @@ class TicketControl extends React.Component {
     };
   }
 
+  handleClick = () => {
+    this.setState({formVisibleOnPage: true}); //setState() takes an object as argument. Object needs to contain any key-value pairs that application needs to update.
+  }
+
   render(){
     // we can use plain JavaScript outside return() statement
     let currentlyVisibleState = null;
