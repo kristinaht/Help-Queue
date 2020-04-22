@@ -14,7 +14,7 @@ class TicketControl extends React.Component {
 
   //handleAddingNewTicketToList is the event handler.
   handleAddingNewTicketToList = (newTicket) => {
-    const newMasterTicketList = this.state.masterTicketList.concat(newTicket);
+    const newMasterTicketList = this.state.masterTicketList.concat(newTicket); //we are assigning value to newMasterTicketList by using concat() - this method does not modify state, it creates a copy of masterTicketList that will be stored in newMasterTicketList
     this.setState({masterTicketList: newMasterTicketList});
     this.setState({formVisibleOnPage: false});
   }

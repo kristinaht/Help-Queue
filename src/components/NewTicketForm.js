@@ -4,12 +4,9 @@ import PropTypes from "prop-types";
 
 function NewTicketForm(props){
 
-  function handleNewTicketFormSubmission(event)
-  {
+  function handleNewTicketFormSubmission(event){
     event.preventDefault();
-    console.log(event.target.names.value);
-    console.log(event.target.location.value);
-    console.log(event.target.issue.value);
+    props.onNewTicketCreation({names:event.target.names.value, location:event.target.location.value, id: v4()});
   }
 
   return (
@@ -32,7 +29,7 @@ function NewTicketForm(props){
 }
 
 NewTicketForm.propTypes = {
-  onNewTicketCreation: PropTypes.func
+  onNewTicketCreation: PropTypes.func //this.handleAddingNewTicketToList is passed down from TicketControl to NewTicketForm componenet as onNewTicketCreation.
 };
 
 export default NewTicketForm;
