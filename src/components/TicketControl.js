@@ -14,15 +14,18 @@ class TicketControl extends React.Component {
   render(){
     // we can use plain JavaScript outside return() statement
     let currentlyVisibleState = null;
+    let addTicketButton = null;
     if(this.state.formVisibleOnPage){
       currentlyVisibleState = <NewTicketForm />
     } else {
       currentlyVisibleState = <TicketList />
+      addTicketButton = <button onClick={this.handleClick}>Add ticket</button>
     }
     return(
       // JSX and {} need to be used inside return() statement
       <React.Fragment> 
         {currentlyVisibleState}
+        {addTicketButton}
       </React.Fragment>
     );
   }
